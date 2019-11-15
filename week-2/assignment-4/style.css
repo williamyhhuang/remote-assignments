@@ -1,0 +1,282 @@
+/*Base styles*/
+body {
+    margin: 0 0 50px;
+    padding-top: 74px;
+}
+
+p{
+    font-size: 1em;
+    text-align: justify;
+    padding: 10px;
+    margin: auto;
+}
+
+a {
+    text-decoration-line: none;
+    color: orange;
+    font-weight: bolder;
+}
+
+.hide-section {
+  display: none;
+}
+
+#close {
+    display:none;
+    background-color: white;
+    position:fixed;
+    cursor: pointer;
+    top: 10px;
+    right:10px;
+    border-color: transparent;
+    background-color: transparent;
+    font-size: 1em;
+    font-weight: bolder;
+}
+
+/*welcome & title*/
+
+#welcome {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    line-height: 1em;
+    font-size: 1em;
+    background: url('img/mountains.jpg') no-repeat center;
+    color: white;
+    margin:0 auto;
+}
+
+#welcome p {
+    text-align: center;
+    text-shadow: 0.1em 0.1em #333;
+    font-size: 2em;
+    padding: 30px 30px;
+    line-height: 2em;
+    cursor: pointer;
+}
+
+h2{
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 0;
+}
+
+.section h2{
+    text-align: center;
+    font-size: 1.5em;
+    border: 3px solid;
+    margin: 30px auto;
+    padding: 10px;
+    border-color: darkorange;
+    border-radius: 10px;
+    background-image: radial-gradient(circle, lightyellow, orange);
+}
+
+#burger {
+    opacity: 0;
+}
+
+label {
+    color:white;
+    font-size: 30px;
+    position: absolute;
+    right: 10px;
+    display: none;
+    cursor: pointer;
+}
+
+/*Layout styles*/
+.logo {
+    width:40px;
+    display: inline;
+    margin-right:auto;
+}
+
+/*Naviation bar*/
+.main-nav {
+    padding: 0;
+    margin: 10px;
+}
+
+.main-nav li {
+	text-align: center;
+	background: white;
+	margin-top: 6px;
+	margin-bottom: 6px;
+    list-style-type: none;
+    float: left;
+    padding: 0 20px;
+    margin: 0 10px;
+}
+
+.main-nav a {
+	font-size: .95em;
+	color: #3acec2;
+	text-transform: uppercase;
+    text-decoration-line: none;
+        cursor: pointer;
+}
+
+.main-nav a:hover {
+	color: #093a58;
+}
+
+/*Mobile navigation bar*/
+.mobile {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: none;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+}
+
+.main-nav-mobile {
+    padding: 50px 0;
+    margin: 0;
+    height: 100vh;
+    float: right;
+    background-color: rgb(255,255,255);
+}
+
+.main-nav-mobile li {
+    line-height: 2em;
+    padding-left: 20px;
+    padding-right: 60px;
+    margin: 0;
+    list-style-type: none;
+    display : flex;
+    flex-direction: row;
+}
+
+
+/*Back to Top*/
+.action {
+    text-align: center;
+    line-height: 3em;
+    color: black;
+    font-size: 1em;
+    width: 200px;
+    background-color: tomato;
+    margin: auto;
+    padding: 0 auto;
+    border: 3px solid;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.action a {
+    font-weight: 500;
+    text-decoration-line: none;
+    color: white;
+}
+
+/*Box layout*/
+.box {
+    width: 50%;
+    margin: 10px;
+    background-color: rgba(255,255,224,0.5);
+    border-radius: 10px;
+}
+
+/*Layout container*/
+
+.container {
+	padding-left: 1em;
+	padding-right: 1em;
+    display: flex;
+/*    flex-wrap: wrap;*/
+}
+
+.main-header {
+    position: fixed;
+    top:0;
+    width: 100%;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	background: #3acec2;
+	margin-bottom:0px;
+}
+
+.box-container-1,
+.box-container-2 {
+    display: flex;
+    flex-direction: row;
+    width:95%;
+    max-width: 1200px;
+    margin: 10px auto;
+}
+
+.section {
+    display:flex;
+}
+
+/*Float clearfix*/
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/*Media Queries*/
+@media (min-width: 800px) and (max-width:1200px) {
+    h1 {
+       font-size:1em; 
+    }    
+}
+
+@media (max-width:800px) {
+    p{
+    text-align: left;
+}
+    
+    h1 {
+       font-size:2em; 
+    }
+    
+    .main-nav {
+        display:none;
+    }
+
+    label {
+        display: block;
+    }
+    
+    #burger:checked + .mobile{
+        display:block;
+    }
+}
+
+
+@media (max-width: 500px) {
+    
+    p{
+    text-align: justify;
+}
+
+    h1 {
+       font-size:2.5em; 
+    }
+    
+    .box-container-1,
+    .box-container-2 {
+        width:100%;
+        height:auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .box {
+        width: 95%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .section h2{
+        margin-left:2.5%;
+        margin-right: 2.5%;
+    }
+}
+
