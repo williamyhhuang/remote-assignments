@@ -1,5 +1,5 @@
-function max(a,b,...theArgs) {
-   var index = [a,b,...theArgs];
+function max(...numbers) {
+   var index = [...numbers];
    var max_number = index[0];
    for (var i=1;i<index.length; i++){
         if (index[i]>max_number){
@@ -8,3 +8,6 @@ function max(a,b,...theArgs) {
    }
    return max_number;
 }
+
+console.log (max(1,2,4,5));
+console.log (max(5,2,7,1,6));
