@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+    head
+        title Week-3 Assignment-4
+        script(src='http://code.jquery.com/jquery-3.4.1.min.js')
+    body
+        h1 Welcome to Week-3 Assignment-4
+        hr
+        if name
+            h2(style="display:inline") Welcome, 
+            h2(style="display:inline")=name
+        else 
+            form(action="/trackName",method='get')
+                label Please enter your name:
+                <input type='text' name='name' id='name'>
+                <input type='submit' value='Submit' onclick='calculate()'>
+        form(action='/logOut',method='post')
+            button(type='submit') Log out
+
+    script.
+        function calculate (){
+            var name_input = $('#name').val();
+            var req = new XMLHttpRequest();
+            req.open("get", "/trackName"+"?name="+name_input);
+            req.send();
+        }
+
+        

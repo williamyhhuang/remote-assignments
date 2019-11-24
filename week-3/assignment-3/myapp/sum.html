@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Week-3 Assignment-3</title>
+        <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+    </head>
+    <body>
+        <script>
+            function calculate (){
+                var number_input = $('#number').val();
+                var req = new XMLHttpRequest();
+                req.open("get", "/getData"+"?number="+number_input);
+                req.onload=function(){
+                    var content = document.getElementById('result');
+                    content.innerHTML = this.responseText;
+                }
+                req.send();
+            }
+        </script>
+        <h1>Welcome to Week-3 Assignment-3</h1>
+        <hr>
+        <form>
+            <label for='number'>Please enter the number : </label>
+            <input type='text' name='number' id='number'>
+            <input type='button' value='submit' id='submit' onclick="calculate()">
+        </form>
+        <br>
+        <h1 style="display:inline">The sum from 1 to </h1>
+        <p id='result' style='display:inline'></p>
+    </body>
+</html>
