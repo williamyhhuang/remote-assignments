@@ -1,0 +1,28 @@
+body {
+    margin: auto;
+    display:flex;
+    flex-direction: column;
+}
+.product,
+.title {
+    width: 100%;
+    margin: auto;
+    display:flex;
+    flex-direction: row;
+}
+
+.name,
+.price,
+.description {
+    width: 33%;
+    margin: auto;
+    line-height: 2em;
+    text-align: center;
+    flex-direction: row;
+}
+
+.title {
+    font-size: 1.5em;
+    font-weight: 500
+}
+

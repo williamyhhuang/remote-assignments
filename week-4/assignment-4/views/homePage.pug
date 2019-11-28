@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+    head
+        title Week-4 Assignment-4
+        script(src='http://code.jquery.com/jquery-3.4.1.min.js')
+    body
+        h1 Welcome to Week-4 Assignment-4
+        hr
+        h2 Please sign in
+        form(action='/check',method='post')
+            label E-mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 
+                <input type='text' name='email' id='email'>
+                <br>
+                label Password : 
+                <input type='text' name='password' id='password'>
+                <br>
+            button(type='submit') Sign in
+        if wrongMessage
+            p(style="color:red")=wrongMessage
+
+        h2 Please sign up
+        form(action='/homePage',method='post')
+            label E-mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 
+                <input type='text' name='email' id='email'>
+                <br>
+                label Password : 
+                <input type='text' name='password' id='password'>
+                <br>
+            button(type='submit') Sign up
+        if wrongEmail 
+            p(style="color:red")=wrongEmail
+

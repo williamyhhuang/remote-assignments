@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Week-4 Assignment-2</title>
+        <link href="style.css" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+    </head>
+    <body>
+        <script>
+            
+            function ajax (src){
+                var req = new XMLHttpRequest();
+                req.open("get", src);
+                req.onload=function(){
+                    var index = JSON.parse(req.responseText);
+                    render(index);
+                }
+                req.send();
+            }
+
+            function render(data){
+                for (var i = 0; i < data.length; i++){
+                    var product = document.createElement("div");
+                    var name_div = document.createElement("div");
+                    var price_div = document.createElement("div");
+                    var description_div = document.createElement("div");
+                    product.className = "product";
+                    name_div.className = "name";
+                    price_div.className = "price";
+                    description_div.className ="description";
+
+                    var name = document.createTextNode(data[i].name);
+                    var price = document.createTextNode(data[i].price);
+                    var description = document.createTextNode(data[i].description);
+
+                    name_div.appendChild(name);
+                    price_div.appendChild(price);
+                    description_div.appendChild(description);
+
+                    product.appendChild(name_div);
+                    product.appendChild(price_div);
+                    product.appendChild(description_div);
+                    document.body.appendChild(product);
+                }
+            }
+
+            ajax ('https://cwpeng.github.io/live-records-samples/data/products.json')        
+        </script>
+        <div class="title">
+            <div class="name">NAME</div>
+            <div class="price">PRICE</div>
+            <div class="description">DESCRIPTION</div>
+        </div>
+    </body>
+</html>
