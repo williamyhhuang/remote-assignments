@@ -8,12 +8,12 @@
     <body>
         <script>
             
-            function ajax (src){
+            function ajax (src, callback){
                 var req = new XMLHttpRequest();
                 req.open("get", src);
                 req.onload=function(){
                     var index = JSON.parse(req.responseText);
-                    render(index);
+                    callback(index);
                 }
                 req.send();
             }
@@ -44,7 +44,10 @@
                 }
             }
 
-            ajax ('https://cwpeng.github.io/live-records-samples/data/products.json')        
+            ajax ('https://cwpeng.github.io/live-records-samples/data/products.json', function(response){
+                render(response);
+            })        
+
         </script>
         <div class="title">
             <div class="name">NAME</div>
